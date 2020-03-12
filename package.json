@@ -3,7 +3,7 @@
   "version": "1.0.2",
   "description": "recommendation component of MntOlympia travel booking app",
   "author": "DanielGodfrey-Dev",
-  "license": "MtnOlympia",
+  "license": "MntOlympus",
   "engines": {
     "node": ">=6.13.0"
   },
