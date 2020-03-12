@@ -1,12 +1,12 @@
 import React from 'react';
-import { shallow } from ‘enzyme’;
+import { shallow } from 'enzyme';
 
 // Components
-import WelcomeMessage from './WelcomeMessage';
+import WelcomeMessage from './WelcomeMessage.js';
 
 function setup() {
   const props = {
-    imgPath: 'https://www.geek.com/wp-content/uploads/2018/08/Cyberpunk-2077-concept-art-625x352.jpg',
+    imgPath: 'https://www.geek.com/wp-content/uploads/2018/08/Cyberpunk-2077-concept-art-625x352.jpg'
   };
   const wrapper = shallow(<WelcomeMessage />);
   return { wrapper, props };
