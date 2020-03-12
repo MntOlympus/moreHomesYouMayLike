@@ -3,6 +3,7 @@ module.exports = {
     browser: true,
     es6: true,
     node: true,
+    jest: true
   },
   extends: [
     'plugin:react/recommended',
@@ -23,5 +24,6 @@ module.exports = {
     'react',
   ],
   rules: {
+    max-len: [2, 150, 4]
   },
 };
