@@ -72,3 +72,18 @@ populate = function() {
 }
 
 populate();
+
+//for sample API call
+//_________________________________________________
+getOneEntry = function(callback) {
+  var query  = Casa.where({ _id: 19 });
+  query.findOne(function (err, casa) {
+    if (err) return handleError(err);
+    if (casa) {
+      callback(null, casa);
+    }
+  });
+};
+
+module.exports = {getOneEntry};
+
