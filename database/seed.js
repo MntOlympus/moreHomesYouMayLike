@@ -1,89 +1,74 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/seedTest2', {useNewUrlParser: true, useUnifiedTopology: true});
-var Schema = mongoose.Schema;
+var dbName = 'seedTest'
+mongoose.connect(`mongodb://localhost/${dbName}`, {useNewUrlParser: true, useUnifiedTopology: true});
+const { Casa } = require('./calls');
 //________________________________
 //    generate fakes
 var faker = require('faker');
 //________________________________
 
-//form for each recommended home according to data displayed on widget
-//_________________________________________________
-let casaSchema = new Schema({
-  _id: Number,
-  title: String,
-  space: {
-    occupancy: String,
-    type: String,
-    bedCount: Number
-  },
-  rate: {
-    price: Number,
-    timeframe: String,
-  },
-  review: {
-    stars: Number,
-    reviewers: Number,
-  },
-  description: String,
-  images: Array
-},
-
-  { typeKey: '$type' } //needed so that for when generating from a mongoose schema, it does not try to convert an object at a property to a string.
-
-);
-
-let Casa = mongoose.model('Casa', casaSchema);
-//_________________________________________________
 
 
 //populate the database with 100 random entries with id's 1 - 100
 //_________________________________________________
 
 handleError = function(err) {
-  console.log('full database population failed.');
+
+  console.log('Database error below:');
+  console.log('\n');
+  console.error(err);
+  console.log('\n');
+  throw new Error('full database population failed.\n');
+
 }
 
 populate = function() {
+
+  mongoose.connect(`mongodb://localhost/${dbName}`, function() {
+    /* Drop the DB to re-seed it with new data*/
+    mongoose.connection.db.dropDatabase();
+  });
+
   for (var i = 1; i < 101; i++) {
+
+    //defining type of rental for type of space
+    var spaceTypes = ['entire', 'private', 'shared'];
+    var occRandom = Math.floor(Math.random() * 2);
+    var occupancyType = spaceTypes[occRandom];
+    //_________________________________________________
+
+    //defining timeframe for clarity
+    var timeTypes = ['nightly', 'weekly', 'monthly'];
+    var timeRandom = Math.floor(Math.random() * 2);
+    var timeframeType = timeTypes[timeRandom];
+    //_________________________________________________
+
     var casa = new Casa({
       _id: i,
       title: faker.hacker.phrase(),
       space: {
-        occupancy: faker.random.word(),
+        occupancy: occupancyType,
         type: faker.random.word(),
-        bedCount: faker.random.number()
+        bedCount: faker.random.number($nbDigits = 9, $strict = true)
       },
       rate: {
-        price: faker.random.number(),
-        timeframe: faker.random.word(),
+        price: faker.random.number($nbDigits = 9999, $strict = true),
+        timeframe: timeframeType
       },
       review: {
-        stars: faker.random.number(),
-        reviewers: faker.random.number(),
+        stars: faker.random.number($nbDigits = 5, $strict = true),
+        reviewers: faker.random.number($nbDigits = 20000, $strict = true)
       },
-      description: faker.random.word(),
+      description: faker.hacker.phrase(),
       images: ['AWS(url.1)', 'AWS(url.2)', '...etc']
     });
 
-    casa.save()
-      .then(() => console.log('...data saved to DB'))
-      .catch(err => handleError(err));
-  };
-}
-
-populate();
-
-//for sample API call
-//_________________________________________________
-getOneEntry = function(callback) {
-  var query  = Casa.where({ _id: 19 });
-  query.findOne(function (err, casa) {
-    if (err) return handleError(err);
-    if (casa) {
-      callback(null, casa);
-    }
-  });
+    casa.save(function (err) {
+      if (err) return handleError(err);
+    });
+  }
 };
 
-module.exports = {getOneEntry};
+populate();
+console.log('database seeded.');
 

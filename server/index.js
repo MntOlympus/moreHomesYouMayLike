@@ -3,13 +3,13 @@ const app = express();
 const path = require('path');
 var bodyParser = require('body-parser');
 const port = 3009;
-const getOneEntry = require('../database/seed.js');
+const { getOneEntry } = require('../database/calls');
 
 app.use(express.static('public'));
 
 app.get('/recommendations', function(req, res) {
 
-  getOneEntry.getOneEntry((err, data) => {
+  getOneEntry((err, data) => {
     if (err) {
       console.log(err);
     }
