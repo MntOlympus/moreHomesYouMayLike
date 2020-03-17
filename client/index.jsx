@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-const axios = require('axios').default;
+import axios from 'axios';
 //import components from widget
 
 class App extends React.Component {
@@ -16,9 +16,9 @@ class App extends React.Component {
     //need to send GET request to server for set of 8 homes...implement logic here or server side
     //_______________________________________________
     axios.get('/recommendations')
-      .then((data) => {
-        this.setState({homes: data});
-        console.log(this.state.homes.data.title);
+      .then((results) => {
+        this.setState({homes: results.data});
+        console.log(this.state.homes);
       })
       .catch((err) => {
         console.log(err);

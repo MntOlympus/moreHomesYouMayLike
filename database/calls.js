@@ -31,16 +31,17 @@ let casaSchema = new Schema({
 
 let Casa = mongoose.model('Casa', casaSchema);
 
-//for sample API call
-//_________________________________________________
-getOneEntry = function(callback) {
-  var query  = Casa.where({ _id: 19 });
-  query.findOne(function (err, casa) {
-    if (err) return handleError(err);
-    if (casa) {
-      callback(null, casa);
-    }
-  });
-};
 
-module.exports = {getOneEntry, Casa};
+getSet = function(callback) {
+
+  var ids = [ ...Array(8).keys() ].map( i => i+1);
+
+  Casa.find().where('_id').in(ids).exec((err, records) => {
+    if (err) {
+      console.log(err)
+    }
+    callback(null, records);
+  });
+}
+
+module.exports = {getSet, Casa};
