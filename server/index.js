@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 const port = 3009;
 const { getOneEntry } = require('../database/calls');
 
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/../public'));
 
 app.get('/recommendations', function(req, res) {
 

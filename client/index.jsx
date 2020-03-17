@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ajax } from 'jquery';
+const axios = require('axios').default;
 //import components from widget
 
 class App extends React.Component {
@@ -11,18 +11,32 @@ class App extends React.Component {
     }
   }
 
-
   componentDidMount() {
-    console.log('mounted.');
-    //need to send GET request to server for set of 8 homes
 
+    //need to send GET request to server for set of 8 homes...implement logic here or server side
+    //_______________________________________________
+    axios.get('/recommendations')
+      .then((data) => {
+        this.setState({homes: data});
+        console.log(this.state.homes.data.title);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
   }
 
   render () {
     return (
         //structure of component based on functionality
-      <div>this is our Testing Matrix</div>
-        //overall test page layout
+      <div>
+      <h1>This is our Testing Matrix</h1>
+      <div>Component Dock</div>
+        <div className="flex-grid-center">
+          <div className="fuller-button red">Austin</div>
+          <div className="fuller-button blue">Bradley</div>
+          <div className="fuller-button purple">GitLord</div>
+        </div>
+      </div>
     )
   }
 }
