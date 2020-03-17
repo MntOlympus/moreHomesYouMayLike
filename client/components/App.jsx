@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import RecHome from './RecHome.jsx';
-// import FavoritePop from './FavoritePop.jsx';
 import axios from 'axios';
-//import components from widget
+
+import RecHomeList from './RecHomeList.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -14,9 +13,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-
     //fetches set of eight homes for display in widget
-    //_______________________________________________
     axios.get('/recommendations')
       .then((results) => {
         this.setState({homes: results.data});
@@ -25,20 +22,21 @@ class App extends React.Component {
       .catch((err) => {
         console.log(err);
       })
+    //_______________________________________________
   }
 
   render () {
     return (
         //structure of component based on functionality
       <div>
-      <h1>This is our Testing Matrix</h1>
-      <div>Component Dock
+      <h3>This is our Testing Matrix</h3>
+      <h4>Component Dock</h4>
+      <RecHomeList />
 
 
-      </div>
         <div className="flex-grid-center">
           <div className="fuller-button red">Austin</div>
-          <div className="fuller-button blue">Bradley</div>
+            <div className="fuller-button blue">Bradley</div>
           <div className="fuller-button purple">GitLord</div>
         </div>
       </div>

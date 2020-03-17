@@ -1,9 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 const RecHome = (props) => (
 
-<div>RecHome</div>
+  <div>RecHome</div>
 
 
 );
