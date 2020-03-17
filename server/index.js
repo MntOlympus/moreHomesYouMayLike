@@ -9,7 +9,8 @@ app.use(express.static(__dirname + '/../public'));
 
 app.get('/recommendations', function(req, res) {
 
-  getOneEntry((err, data) => {
+  //currently fetches records _ids 1-8
+  getSet((err, data) => {
     if (err) {
       console.log(err);
     }
