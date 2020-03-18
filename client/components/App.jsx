@@ -20,7 +20,7 @@ class App extends React.Component {
         console.log(this.state.homes);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log('something went awry');
       })
     //_______________________________________________
   }

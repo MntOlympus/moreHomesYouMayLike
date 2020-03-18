@@ -37,6 +37,7 @@
     "babel-loader": "^8.0.6",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.4.4",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
@@ -47,7 +48,13 @@
     "faker": "^4.1.0",
     "jest": "^25.1.0",
     "nodemon": "^2.0.2",
+    "react-test-renderer": "^16.13.0",
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   }
 }
