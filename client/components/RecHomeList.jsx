@@ -3,9 +3,7 @@ import React from 'react';
 const RecHomeList = ({ homes }) => (
 
 
-    <div>
-
-    </div>
+    <div>More Homes You May Like</div>
 
 
 );
