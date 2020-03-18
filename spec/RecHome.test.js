@@ -15,6 +15,6 @@ describe('Component: RecHome', () => {
     ).toBe(1);
   })
 
-    //further tests
+
 
 });

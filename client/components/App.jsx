@@ -8,7 +8,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      homes: []
+      homes: null
     }
   }
 
@@ -26,21 +26,21 @@ class App extends React.Component {
   }
 
   render () {
-    return (
-        //structure of component based on functionality
-      <div>
-      <h3>This is our Testing Matrix</h3>
-      <h4>Component Dock</h4>
-      <RecHomeList />
 
+      return (
+        <div>
+        <h3>This is our Testing Matrix</h3>
+        <h4>Component Dock</h4>
 
-        <div className="flex-grid-center">
-          <div className="fuller-button red">Austin</div>
-            <div className="fuller-button blue">Bradley</div>
-          <div className="fuller-button purple">GitLord</div>
+        {this.state.homes ? <RecHomeList homes={this.state.homes} /> : <div>...loading</div>}
+
+          <div className="flex-grid-center">
+            <div className="fuller-button red">Austin</div>
+              <div className="fuller-button blue">Bradley</div>
+            <div className="fuller-button purple">GitLord</div>
+          </div>
         </div>
-      </div>
-    )
+      )
   }
 }
 

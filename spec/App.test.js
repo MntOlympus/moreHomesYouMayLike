@@ -15,6 +15,6 @@ describe('Component: App', () => {
     ).toBe(1);
   })
 
-  //further tests
+  //should render RecHomeList
 
 });

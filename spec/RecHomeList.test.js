@@ -6,6 +6,8 @@ import RecHomeList from '../client/components/RecHomeList.jsx';
 
 describe('Component: RecHomeList', () => {
 
+  //beforeAll -> axios request to actually get data from database
+
   // confirm it enters our universe properly!
   it('renders without exploding', () => {
     expect(
@@ -15,6 +17,6 @@ describe('Component: RecHomeList', () => {
     ).toBe(1);
   })
 
-    //further tests
+    //should render with eight home objects
 
 });
