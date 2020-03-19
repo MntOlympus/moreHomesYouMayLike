@@ -35,6 +35,10 @@ color: rgb(35, 8, 131);
   left: 29%;
 }
 
+.hearts {
+  display: flex;
+}
+
 .home {
   max-width: 300px;
   height: 100%;

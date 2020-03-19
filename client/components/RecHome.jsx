@@ -1,4 +1,5 @@
 import React from 'react';
+import Stars from './Stars.jsx';
 
 const RecHome = ({ home }) => {
 
@@ -9,7 +10,11 @@ const RecHome = ({ home }) => {
         <img className="contain" src={home.images[0]}></img>
 
         <span>
-        <p className="reviewers">{home.review.stars} ({home.review.reviewers})</p>
+        <p className="reviewers">
+          <Stars starCount={home.review.stars} />
+            {home.review.stars}.0
+            ({home.review.reviewers})
+        </p>
         <p>{home.space.occupancy} {home.space.type} ☕️ {home.space.bedCount} beds</p>
         </span>
 
