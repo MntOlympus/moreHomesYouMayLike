@@ -1,17 +1,16 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 
-
 html {
-  background: url('https://avatars2.githubusercontent.com/u/39982788?s=400&v=4') no-repeat center center fixed;
+  background: url('http://www.baltana.com/files/wallpapers-5/Light-Background-Wallpaper-HD-16378.jpg') no-repeat center center fixed;
 
 }
 
 .dock {
 margin: 5;
 height: 100%;
-text-align: center;
-font-family: 'Oxygen Mono', monospace;
-color: rgb(28, 1, 53);
+text-align: left;
+font-family: 'Unica One', sans-serif;
+color: rgb(35, 8, 131);
 }
 
 .list-wrapper {
@@ -19,29 +18,54 @@ color: rgb(28, 1, 53);
   margin: 2;
   height: 100%;
   text-align: none;
-  font-family: 'Oxygen Mono', monospace;
-  color: rgb(28, 1, 53);
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+  font-size: 14px;
+  line-height: 1.43;
+  color: #484848;
+  background-color: #fff;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 
 .icon-wrapper{
   position: absolute;
   top: 25px;
-  left: 75%;
+  left: 29%;
 }
+
 .home {
-  max-width: fit-content;
-  margin: 5;
+  max-width: 300px;
   height: 100%;
   text-align: none;
-  font-family: 'Oxygen Mono', monospace;
-  font-size: xx-small;
-  color: rgb(28, 1, 53);
+  padding-right: 5em;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+  font-size: 10px;
+  line-height: 1.43;
+  color: #484848;
+  background-color: #fff;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .reviewers {
+  position: relative;
   float: right;
+  text-align: right;
 }
+
+img {
+  width: 250px;
+  height: 200px;
+  border: 1px solid #000;
+  object-fit: cover;
+}
+
+
+
+
 
 /*
 ________________________________________________________

@@ -31,6 +31,8 @@ handleError = function(err) {
 
 }
 
+var image = 'https://cdn1.artstation.com/p/assets/images/images/001/139/545/large/liam-reid-liam-reid-hackerroom.jpg?1440869455';
+
 populate = function() {
 
   //drop database for re-seeding
@@ -55,7 +57,7 @@ populate = function() {
     //_________________________________________________
 
     var casa = new Casa({
-      _id: i,
+      index: i,
       title: faker.lorem.sentence(),
       space: {
         occupancy: occupancyType,
@@ -71,12 +73,11 @@ populate = function() {
         reviewers: faker.random.number($nbDigits = 2000, $strict = true)
       },
       description: faker.hacker.phrase(),
-      images: ['AWS(url.1)', 'AWS(url.2)', '...etc']
+      images: [image]
     });
 
     casa.save(function (err) {
       if (err) {
-        seeded = false;
         return handleError(err);
       }
     });

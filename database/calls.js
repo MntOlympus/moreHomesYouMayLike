@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 //form for each recommended home according to data displayed on widget
 //_________________________________________________
 let casaSchema = new Schema({
-  _id: Number,
+  index: Number,
   title: String,
   space: {
     occupancy: String,
@@ -36,7 +36,7 @@ getSet = function(callback) {
 
   var ids = [ ...Array(8).keys() ].map( i => i+1);
 
-  Casa.find().where('_id').in(ids).exec((err, records) => {
+  Casa.find().where('index').in(ids).exec((err, records) => {
     if (err) {
       console.log(err)
     }

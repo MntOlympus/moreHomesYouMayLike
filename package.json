@@ -1,6 +1,6 @@
 {
   "name": "moreHomesYouMayLike",
-  "version": "1.1.1",
+  "version": "1.5.0",
   "description": "recommendation component of MntOlympus travel booking app",
   "author": "DanielGodfrey-Dev",
   "license": "MntOlympus",
@@ -19,6 +19,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
+    "circular-std": "^1.0.3",
     "express": "^4.17.1",
     "jquery": "^3.4.1",
     "mongodb": "^3.5.5",
