@@ -20,7 +20,7 @@ class App extends React.Component {
         console.log(this.state.homes);
       })
       .catch((err) => {
-        // console.log('something went awry');
+        console.log('something went awry');
       })
     //_______________________________________________
   }
@@ -31,7 +31,7 @@ class App extends React.Component {
         <div>
           <h3 className="dock">This is our Testing Matrix</h3>
           <h4 className="dock">Component Dock</h4>
-          <i className="fab fa-app-store fa-4x fa-spin icon-wrapper" style={{color: "darkblue"}}></i>
+          <i className="fab fa-app-store fa-4x fa-spin icon-wrapper" style={{color: "darkblue"}}/>
 
           {this.state.homes ? <RecHomeList homesSet={this.state.homes} /> : <div>...loading</div>}
 

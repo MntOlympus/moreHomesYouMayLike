@@ -41,6 +41,7 @@ color: rgb(35, 8, 131);
 
 .home {
   max-width: 300px;
+  flex: 1;
   height: 100%;
   text-align: none;
   padding-right: 5em;
