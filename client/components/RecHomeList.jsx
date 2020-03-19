@@ -3,16 +3,12 @@ import RecHome from './RecHome.jsx';
 
 const RecHomeList = ({ homesSet }) => {
 
-   const homes = homesSet.map(home =>
-        <div>
-            <RecHome home={home} />
-        </div>
-    )
+   const homes = homesSet.map(home => <RecHome key={home._id} home={home} />)
 
     return (
         <div>
-            More Homes You May Like
-            {homes}
+            <h4>More Homes You May Like</h4>
+            <div className='list-wrapper'>{homes}</div>
         </div>
     )
 

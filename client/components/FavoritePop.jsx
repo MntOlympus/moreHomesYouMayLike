@@ -2,8 +2,11 @@ import React from 'react';
 
 const FavoritePop = () => (
 
-  <div>FavoritePop</div>
+  <div>
 
+
+
+  </div>
 
 );
 
