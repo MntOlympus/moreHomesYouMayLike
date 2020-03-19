@@ -29,10 +29,12 @@ class App extends React.Component {
 
       return (
         <div>
-        <h3>This is our Testing Matrix</h3>
-        <h4>Component Dock</h4>
+        <h3 className="dock">This is our Testing Matrix</h3>
+        <h4 className="dock">Component Dock</h4>
+        <i className="fab fa-app-store fa-4x fa-spin icon-wrapper" style={{color: "purple"}}></i>
 
-        {this.state.homes ? <RecHomeList homes={this.state.homes} /> : <div>...loading</div>}
+        {this.state.homes ? <RecHomeList homesSet={this.state.homes} /> : <div>...loading</div>}
+
 
           <div className="flex-grid-center">
             <div className="fuller-button red">Austin</div>

@@ -3,14 +3,20 @@
 
 html {
   background: url('https://avatars2.githubusercontent.com/u/39982788?s=400&v=4') no-repeat center center fixed;
+  font-family: 'Oxygen Mono', monospace;
+  color: rgb(28, 1, 53);
 }
 
-body, html {
-margin: 0;
+.dock {
+margin: 5;
 height: 100%;
 text-align: center;
-font-family: 'Oxygen Mono', monospace;
-color: rgb(28, 1, 53);
+}
+
+.icon-wrapper{
+  position: absolute;
+  top: 25px;
+  left: 75%;
 }
 
 

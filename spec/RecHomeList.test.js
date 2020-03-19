@@ -7,50 +7,53 @@ import RecHome from '../client/components/RecHome.jsx';
 
 describe('Component: RecHomeList', () => {
 
-  const minProps = {
-    homes: []
-  }
+  const bestHome = 'example';
+  const minProps = [
+      {title: bestHome},
+      {title: bestHome},
+      {title: bestHome},
+      {title: bestHome},
+      {title: bestHome},
+      {title: bestHome},
+      {title: bestHome},
+      {title: bestHome}
+    ]
 
   // confirm it enters our universe properly!
   it('renders without exploding', () => {
     expect(
       shallow(
-        <RecHomeList homes={minProps}/>
+        <RecHomeList homesSet={minProps}/>
       ).length
     ).toBe(1);
   })
 
   it('should render correctly in "debug" mode', () => {
-    const wrap = shallow(<RecHomeList debug />);
-
-    expect(wrap).toMatchSnapshot();
-  });
-
-  it('should render correctly with no props', () => {
-    const wrap = shallow(<RecHomeList/>);
+    const wrap = shallow(<RecHomeList homesSet={minProps} debug />);
 
     expect(wrap).toMatchSnapshot();
   });
 
   it('should render correctly with props', () => {
 
-    const wrap = shallow(<RecHomeList homes={minProps}/>);
+    const wrap = shallow(<RecHomeList homesSet={minProps}/>);
     expect(wrap).toMatchSnapshot();
   });
 
   it('should render banner text correctly with given strings', () => {
     const strings = ['one', 'two'];
-    const wrap = shallow(<RecHomeList list={strings} />);
+    const wrap = shallow(<RecHomeList list={strings} homesSet={minProps}/>);
     expect(wrap).toMatchSnapshot();
   });
 
   it('should render child components', () => {
-    const wrap = mount(<RecHomeList/>);
+    const wrap = mount(<RecHomeList homesSet={minProps}/>);
 
     expect(wrap.find(RecHome).length).toBe(8);
   });
 
   //it should scroll through homes (children)
+    //it should display three children at a time
 
 
 });
