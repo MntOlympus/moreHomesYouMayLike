@@ -1,11 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
-const RecHome = (props) => (
+const RecHome = ({ home }) => {
 
-<div>RecHome</div>
+  console.log(home);
+  return (
+    <div>RecHome</div>
+  )
 
-
-);
+};
 
 export default RecHome;

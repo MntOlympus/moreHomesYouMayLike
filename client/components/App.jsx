@@ -1,48 +1,48 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import RecHome from './RecHome.jsx';
-// import FavoritePop from './FavoritePop.jsx';
 import axios from 'axios';
-//import components from widget
+
+import RecHomeList from './RecHomeList.jsx';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      homes: []
+      homes: null
     }
   }
 
   componentDidMount() {
-
     //fetches set of eight homes for display in widget
-    //_______________________________________________
     axios.get('/recommendations')
       .then((results) => {
         this.setState({homes: results.data});
         console.log(this.state.homes);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log('something went awry');
       })
+    //_______________________________________________
   }
 
   render () {
-    return (
-        //structure of component based on functionality
-      <div>
-      <h1>This is our Testing Matrix</h1>
-      <div>Component Dock
+
+      return (
+        <div>
+        <h3 className="dock">This is our Testing Matrix</h3>
+        <h4 className="dock">Component Dock</h4>
+        <i className="fab fa-app-store fa-4x fa-spin icon-wrapper" style={{color: "purple"}}></i>
+
+        {this.state.homes ? <RecHomeList homesSet={this.state.homes} /> : <div>...loading</div>}
 
 
-      </div>
-        <div className="flex-grid-center">
-          <div className="fuller-button red">Austin</div>
-          <div className="fuller-button blue">Bradley</div>
-          <div className="fuller-button purple">GitLord</div>
+          <div className="flex-grid-center">
+            <div className="fuller-button red">Austin</div>
+              <div className="fuller-button blue">Bradley</div>
+            <div className="fuller-button purple">GitLord</div>
+          </div>
         </div>
-      </div>
-    )
+      )
   }
 }
 
