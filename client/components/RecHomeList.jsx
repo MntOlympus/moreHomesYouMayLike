@@ -1,7 +1,7 @@
 import React from 'react';
 import RecHome from './RecHome.jsx';
 
-const RecHomeList = ({ homesSet }) => {
+const RecHomeList = ({ homesSet, shift, nexthome, prevhome }) => {
 
    const homes = homesSet.map(home => <RecHome key={home._id} home={home} />)
 
@@ -10,9 +10,20 @@ const RecHomeList = ({ homesSet }) => {
 
     return (
         <div>
+            <button
+                onClick={nexthome}
+                disabled={shift === homesSet.length-1}
+                >Forward</button>
+            <button
+                onClick={prevhome}
+                disabled={shift === 0}
+            >Back</button>
+
             <h4>More Homes You May Like</h4>
 
-            <div className='list-wrapper'>
+            <div className='list-wrapper' style={{
+                  'transform': `translateX(-${shift*(100/homesSet.length)}%)`
+                }}>
                     {homes}
             </div>
         </div>

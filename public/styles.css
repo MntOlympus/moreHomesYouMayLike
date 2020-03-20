@@ -5,6 +5,10 @@ html {
 
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .dock {
 margin: 5;
 height: 100%;
@@ -14,20 +18,27 @@ color: rgb(35, 8, 131);
 }
 
 .list-wrapper {
+  position: absolute;
   display: flex;
   margin: 2;
-  height: 100%;
   text-align: none;
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
   font-size: 14px;
   line-height: 1.43;
   color: #484848;
   background-color: #fff;
-  margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+.home {
+  max-width: 300px;
+  flex: 1;
+  height: 100%;
+  text-align: none;
+  padding-right: 2em;
+  font-size: 10px;
+}
 
 .icon-wrapper{
   position: absolute;
@@ -39,21 +50,6 @@ color: rgb(35, 8, 131);
   display: flex;
 }
 
-.home {
-  max-width: 300px;
-  flex: 1;
-  height: 100%;
-  text-align: none;
-  padding-right: 5em;
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
-  font-size: 10px;
-  line-height: 1.43;
-  color: #484848;
-  background-color: #fff;
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
 .reviewers {
   position: relative;
@@ -83,7 +79,8 @@ ________________________________________________________
   display: flex;
   -webkit-box-pack: center;
           justify-content: center;
-  margin: 0em 0;
+  margin: 0em;
+  margin-top: 20em;
 }
 
 .fuller-button {

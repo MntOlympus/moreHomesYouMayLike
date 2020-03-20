@@ -8,8 +8,11 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      homes: null
+      homes: null,
+      shift: 0
     }
+    this.nexthome = this.nexthome.bind(this);
+    this.prevhome = this.prevhome.bind(this);
   }
 
   componentDidMount() {
@@ -18,11 +21,26 @@ class App extends React.Component {
       .then((results) => {
         this.setState({homes: results.data});
         console.log(this.state.homes);
+        // console.log(this.state.home);
       })
       .catch((err) => {
         console.log('something went awry');
       })
     //_______________________________________________
+  }
+
+  nexthome() {
+    // const newhome = this.state.home.index+1;
+    this.setState({
+      shift: this.state.shift + 1
+    })
+  }
+
+  prevhome() {
+    // const newhome = this.state.home.index-1;
+    this.setState({
+      shift: this.state.shift - 1
+    })
   }
 
   render () {
@@ -33,7 +51,7 @@ class App extends React.Component {
           <h4 className="dock">Component Dock</h4>
           <i className="fab fa-app-store fa-4x fa-spin icon-wrapper" style={{color: "darkblue"}}/>
 
-          {this.state.homes ? <RecHomeList homesSet={this.state.homes} /> : <div>...loading</div>}
+          {this.state.homes ? <RecHomeList homesSet={this.state.homes} shift={this.state.shift} nexthome={this.nexthome} prevhome={this.prevhome}/> : <div>...loading</div>}
 
           <div className="flex-grid-center">
             <div className="fuller-button red">Austin</div>

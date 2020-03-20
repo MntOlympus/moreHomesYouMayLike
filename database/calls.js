@@ -34,7 +34,7 @@ let Casa = mongoose.model('Casa', casaSchema);
 
 getSet = function(callback) {
 
-  var ids = [ ...Array(8).keys() ].map( i => i+1);
+  var ids = [ ...Array(8).keys() ].map( i => i);
 
   Casa.find().where('index').in(ids).exec((err, records) => {
     if (err) {
