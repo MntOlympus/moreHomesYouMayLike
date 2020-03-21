@@ -1,0 +1,21 @@
+.home {
+  flex: 1;
+  max-width: 300px;
+  height: 100%;
+  padding-right: 2em;
+  font-size: 10px;
+}
+
+img {
+  width: 250px;
+  height: 200px;
+  border: 1px solid #000;
+  object-fit: cover;
+}
+
+.reviewers {
+  position: relative;
+  float: right;
+  text-align: right;
+}
+

@@ -1,16 +1,17 @@
 import React from 'react';
 import Stars from './Stars.jsx';
+import styles from '../stylesheets/RecHome.module.css';
 
 const RecHome = ({ home }) => {
 
   return (
-    <div className="home">
+    <div className={styles.home}>
 
       <section>
-        <img src={home.images[0]}></img>
+        <img src={home.images[0]} className={styles.img}></img>
 
         <span>
-        <p className="reviewers">
+        <p className={styles.reviewers}>
           <Stars starCount={home.review.stars} />
             {home.review.stars}
             ({home.review.reviewers})
