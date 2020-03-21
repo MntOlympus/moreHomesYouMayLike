@@ -9,24 +9,23 @@ const RecHomeList = ({ homesSet, shift, nexthome, prevhome }) => {
         //implement scroll left/right via buttons
 
     return (
-        <div>
-            <button
-                onClick={nexthome}
-                disabled={shift === homesSet.length-1}
-                >Forward</button>
-            <button
-                onClick={prevhome}
-                disabled={shift === 0}
-            >Back</button>
+            <div>
+                <button
+                    onClick={nexthome}
+                    disabled={shift === homesSet.length-3}
+                    >Forward</button>
+                <button
+                    onClick={prevhome}
+                    disabled={shift === 0}
+                >Back</button>
 
-            <h4>More Homes You May Like</h4>
-
-            <div className='list-wrapper' style={{
-                  'transform': `translateX(-${shift*(100/homesSet.length)}%)`
-                }}>
-                    {homes}
+                <h4>More Homes You May Like</h4>
+                    <div className='list-wrapper' style={{
+                        'transform': `translateX(-${shift*(100/homesSet.length)}%)`
+                        }}>
+                            {homes}
+                    </div>
             </div>
-        </div>
     )
 
 };

@@ -7,7 +7,7 @@ const RecHome = ({ home }) => {
     <div className="home">
 
       <section>
-        <img className="contain" src={home.images[0]}></img>
+        <img src={home.images[0]}></img>
 
         <span>
         <p className="reviewers">
