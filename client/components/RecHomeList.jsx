@@ -2,9 +2,9 @@ import React from 'react';
 import RecHome from './RecHome.jsx';
 import styles from '../stylesheets/RecHomeList.module.css';
 
-const RecHomeList = ({ homesSet, shift, nexthome, prevhome }) => {
+const RecHomeList = ({ homesSet, shift, image, nexthome, prevhome, imageForward, imageBackward }) => {
 
-   const homes = homesSet.map(home => <RecHome key={home._id} home={home} />)
+   const homes = homesSet.map(home => <RecHome key={home._id} home={home} image={image} imageForward={imageForward} imageBackward={imageBackward} />)
 
    console.log(styles.container);
 

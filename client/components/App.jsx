@@ -10,10 +10,13 @@ class App extends React.Component {
     super(props);
     this.state = {
       homes: null,
-      shift: 0
+      shift: 0,
+      image: 0
     }
     this.nexthome = this.nexthome.bind(this);
     this.prevhome = this.prevhome.bind(this);
+    this.imageForward = this.imageForward.bind(this);
+    this.imageBackward = this.imageBackward.bind(this);
   }
 
   componentDidMount() {
@@ -44,12 +47,24 @@ class App extends React.Component {
     })
   }
 
+  imageForward() {
+    this.setState({
+      image: this.state.image + 1
+    })
+  }
+
+  imageBackward() {
+    this.setState({
+      image: this.state.image - 1
+    })
+  }
+
   render () {
 
       return (
         <div>
 
-          {this.state.homes ? <RecHomeList homesSet={this.state.homes} shift={this.state.shift} nexthome={this.nexthome} prevhome={this.prevhome}/> : <div>...loading</div>}
+          {this.state.homes ? <RecHomeList homesSet={this.state.homes} shift={this.state.shift} image={this.state.image} nexthome={this.nexthome} prevhome={this.prevhome} imageForward={this.imageForward} imageBackward={this.imageBackward}/> : <div>...loading</div>}
 
         </div>
       )

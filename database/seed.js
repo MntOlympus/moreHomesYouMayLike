@@ -31,7 +31,9 @@ handleError = function(err) {
 
 }
 
-var image = 'https://cdn1.artstation.com/p/assets/images/images/001/139/545/large/liam-reid-liam-reid-hackerroom.jpg?1440869455';
+var image1 = 'https://cdn1.artstation.com/p/assets/images/images/001/139/545/large/liam-reid-liam-reid-hackerroom.jpg?1440869455';
+var image2 = 'https://cdnb.artstation.com/p/assets/images/images/004/991/311/medium/adrian-marc-amarc-cyberoom-v3.jpg?1487708427';
+var image3 = 'https://cdna.artstation.com/p/assets/images/images/009/687/364/large/tony-setiabudi-jadi-final0000.jpg?1520345288';
 
 populate = function() {
 
@@ -79,7 +81,7 @@ populate = function() {
         reviewers: faker.random.number($nbDigits = 2000, $strict = true)
       },
       description: faker.hacker.phrase(),
-      images: [image]
+      images: [image1, image2, image3]
     });
 
     casa.save(function (err) {
