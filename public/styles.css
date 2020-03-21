@@ -32,6 +32,23 @@ color: rgb(35, 8, 131);
   transition: transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
+/*
+.left-button {
+  float: left;
+  position: absolute;
+  cursor:pointer;
+  width: 10px;
+  height: 10px;
+
+}
+.right-button {
+  float: right;
+  cursor:pointer;
+  width: 10px;
+  height: 10px;
+
+} */
+
 .home {
   flex: 1;
   max-width: 300px;
