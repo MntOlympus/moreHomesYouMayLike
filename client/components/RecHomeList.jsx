@@ -5,9 +5,6 @@ const RecHomeList = ({ homesSet, shift, nexthome, prevhome }) => {
 
    const homes = homesSet.map(home => <RecHome key={home._id} home={home} />)
 
-    //implement restriction of three home views on screen
-    //implement scroll left/right via buttons
-
     return (
         <div>
                 <button className="left-button"
@@ -28,7 +25,6 @@ const RecHomeList = ({ homesSet, shift, nexthome, prevhome }) => {
 
         </div>
     )
-
 };
 
 export default RecHomeList;

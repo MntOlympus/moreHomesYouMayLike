@@ -42,7 +42,7 @@ populate = function() {
     );
   });
 
-  for (var i = 0; i < 103; i++) {
+  for (var i = 1; i < 105; i++) {
 
     //defining type of rental for type of space
     var spaceTypes = ['entire', 'private', 'shared'];

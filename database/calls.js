@@ -34,9 +34,14 @@ let Casa = mongoose.model('Casa', casaSchema);
 
 getSet = function(callback) {
 
-  var ids = [ ...Array(8).keys() ].map( i => i);
+  //logic sets up 13 sets of eight different home objects in database
+  var setIndex = Math.floor(Math.random() * 13)
+  var ids = [ ...Array(8).keys() ].map( i => i + 1);
+  var shiftSet = 8 * setIndex;
+  var idSet = ids.map(i => i + shiftSet);
+  //_________________________________________________________________
 
-  Casa.find().where('index').in(ids).exec((err, records) => {
+  Casa.find().where('index').in(idSet).exec((err, records) => {
     if (err) {
       console.log(err)
     }

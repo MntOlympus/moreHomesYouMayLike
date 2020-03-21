@@ -20,7 +20,7 @@ class App extends React.Component {
     axios.get('/recommendations')
       .then((results) => {
         this.setState({homes: results.data});
-        console.log(this.state.homes);
+        console.log('data set: ', this.state.homes);
         // console.log(this.state.home);
       })
       .catch((err) => {
