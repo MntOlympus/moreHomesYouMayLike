@@ -56,20 +56,26 @@ populate = function() {
     var timeframeType = timeTypes[timeRandom];
     //_________________________________________________
 
+    //defining timeframe for clarity
+    var locTypes = ['house', 'apartment', 'villa', 'condo', 'squat'];
+    var locRandom = Math.floor(Math.random() * 5);
+    var locType = locTypes[timeRandom];
+    //_________________________________________________
+
     var casa = new Casa({
       index: i,
       title: faker.lorem.sentence(),
       space: {
         occupancy: occupancyType,
-        type: faker.random.word(),
+        type: locType,
         bedCount: faker.random.number($nbDigits = 9, $strict = true)
       },
       rate: {
-        price: faker.random.number($nbDigits = 999, $strict = true),
+        price: faker.random.number($nbDigits = 799, $strict = true),
         timeframe: timeframeType
       },
       review: {
-        stars: faker.random.number($nbDigits = 5, $strict = true),
+        stars: faker.finance.amount(0, 5, 1),
         reviewers: faker.random.number($nbDigits = 2000, $strict = true)
       },
       description: faker.hacker.phrase(),

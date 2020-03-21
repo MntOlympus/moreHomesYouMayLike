@@ -12,7 +12,7 @@ const RecHome = ({ home }) => {
         <span>
         <p className="reviewers">
           <Stars starCount={home.review.stars} />
-            {home.review.stars}.0
+            {home.review.stars}
             ({home.review.reviewers})
         </p>
         <p>{home.space.occupancy} {home.space.type} ☕️ {home.space.bedCount} beds</p>
