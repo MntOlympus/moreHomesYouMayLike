@@ -15,7 +15,7 @@ const RecHome = ({ home }) => {
           <button className={styles.btnLeft}
             onClick={() => setIndex(index - 1)}
             disabled={index === 0}>
-            <i class="fas fa-4x fa-chevron-left"></i>
+            <i className="fas fa-4x fa-chevron-left"></i>
             </button>
 
         <img src={home.images[index]} className={styles.img}></img>
@@ -23,7 +23,7 @@ const RecHome = ({ home }) => {
           <button className={styles.btnRight}
             onClick={() => setIndex(index + 1)}
               disabled={index === home.images.length - 1}>
-              <i class="fas fa-4x fa-chevron-right"></i>
+              <i className="fas fa-4x fa-chevron-right"></i>
           </button>
         </div>
 {/* ______________image carousel__________________________ */}
