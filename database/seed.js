@@ -59,9 +59,9 @@ populate = function() {
     //_________________________________________________
 
     //defining timeframe for clarity
-    var locTypes = ['house', 'apartment', 'villa', 'condo', 'squat'];
-    var locRandom = Math.floor(Math.random() * 5);
-    var locType = locTypes[timeRandom];
+    var locTypes = ['house', 'apartment', 'villa', 'condo', 'squat', 'tech palace'];
+    var locRandom = Math.floor(Math.random() * 6);
+    var locType = locTypes[locRandom];
     //_________________________________________________
 
     var casa = new Casa({

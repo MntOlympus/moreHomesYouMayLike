@@ -13,8 +13,9 @@ const RecHomeList = ({ homesSet, shift, nexthome, prevhome }) => {
             <div className={styles.btnContainer}>
                 <button className={styles.btnLeft}
                     onClick={prevhome}
-                    disabled={shift === 0}
-                    >Back</button>
+                    disabled={shift === 0}>
+                    <i className="fas fa-3x fa-chevron-left"></i>
+                </button>
 
             <div className={styles.container}>
                     <h4>More Homes You May Like</h4>
@@ -29,8 +30,10 @@ const RecHomeList = ({ homesSet, shift, nexthome, prevhome }) => {
 
                     <button className={styles.btnRight}
                         onClick={nexthome}
-                        disabled={shift === homesSet.length-3}
-                    >Forward</button>
+                        disabled={shift === homesSet.length-3}>
+                        <i className="fas fa-3x fa-chevron-right"></i>
+                    </button>
+
             </div>
 
         </div>
