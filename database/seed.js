@@ -31,7 +31,9 @@ handleError = function(err) {
 
 }
 
-var image = 'https://cdn1.artstation.com/p/assets/images/images/001/139/545/large/liam-reid-liam-reid-hackerroom.jpg?1440869455';
+var image1 = 'https://cdn1.artstation.com/p/assets/images/images/001/139/545/large/liam-reid-liam-reid-hackerroom.jpg?1440869455';
+var image2 = 'https://cdnb.artstation.com/p/assets/images/images/004/991/311/medium/adrian-marc-amarc-cyberoom-v3.jpg?1487708427';
+var image3 = 'https://cdna.artstation.com/p/assets/images/images/009/687/364/large/tony-setiabudi-jadi-final0000.jpg?1520345288';
 
 populate = function() {
 
@@ -42,7 +44,7 @@ populate = function() {
     );
   });
 
-  for (var i = 1; i < 101; i++) {
+  for (var i = 1; i < 105; i++) {
 
     //defining type of rental for type of space
     var spaceTypes = ['entire', 'private', 'shared'];
@@ -56,24 +58,30 @@ populate = function() {
     var timeframeType = timeTypes[timeRandom];
     //_________________________________________________
 
+    //defining timeframe for clarity
+    var locTypes = ['house', 'apartment', 'villa', 'condo', 'squat'];
+    var locRandom = Math.floor(Math.random() * 5);
+    var locType = locTypes[timeRandom];
+    //_________________________________________________
+
     var casa = new Casa({
       index: i,
       title: faker.lorem.sentence(),
       space: {
         occupancy: occupancyType,
-        type: faker.random.word(),
+        type: locType,
         bedCount: faker.random.number($nbDigits = 9, $strict = true)
       },
       rate: {
-        price: faker.random.number($nbDigits = 999, $strict = true),
+        price: faker.random.number($nbDigits = 799, $strict = true),
         timeframe: timeframeType
       },
       review: {
-        stars: faker.random.number($nbDigits = 5, $strict = true),
+        stars: faker.finance.amount(0, 5, 1),
         reviewers: faker.random.number($nbDigits = 2000, $strict = true)
       },
       description: faker.hacker.phrase(),
-      images: [image]
+      images: [image1, image2, image3]
     });
 
     casa.save(function (err) {

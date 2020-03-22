@@ -2,32 +2,7 @@
 
 html {
   background: url('http://www.baltana.com/files/wallpapers-5/Light-Background-Wallpaper-HD-16378.jpg') no-repeat center center fixed;
-
 }
-
-.dock {
-margin: 5;
-height: 100%;
-text-align: left;
-font-family: 'Unica One', sans-serif;
-color: rgb(35, 8, 131);
-}
-
-.list-wrapper {
-  display: flex;
-  margin: 2;
-  height: 100%;
-  text-align: none;
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
-  font-size: 14px;
-  line-height: 1.43;
-  color: #484848;
-  background-color: #fff;
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 
 .icon-wrapper{
   position: absolute;
@@ -35,42 +10,13 @@ color: rgb(35, 8, 131);
   left: 29%;
 }
 
-.hearts {
-  display: flex;
-}
-
-.home {
-  max-width: 300px;
-  flex: 1;
+.dock {
+  margin: 5;
   height: 100%;
-  text-align: none;
-  padding-right: 5em;
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
-  font-size: 10px;
-  line-height: 1.43;
-  color: #484848;
-  background-color: #fff;
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  text-align: left;
+  font-family: 'Unica One', sans-serif;
+  color: rgb(35, 8, 131);
 }
-
-.reviewers {
-  position: relative;
-  float: right;
-  text-align: right;
-}
-
-img {
-  width: 250px;
-  height: 200px;
-  border: 1px solid #000;
-  object-fit: cover;
-}
-
-
-
-
 
 /*
 ________________________________________________________
@@ -83,7 +29,7 @@ ________________________________________________________
   display: flex;
   -webkit-box-pack: center;
           justify-content: center;
-  margin: 0em 0;
+  margin: 0em;
 }
 
 .fuller-button {
