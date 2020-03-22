@@ -6,16 +6,78 @@
   font-size: 10px;
 }
 
-img {
+
+.reviewers {
+  position: relative;
+  float: right;
+  text-align: right;
+}
+
+
+
+
+/* -------------------------------
+    for buttons over images
+------------------------------- */
+
+.container .img {
   width: 250px;
   height: 200px;
   border: 1px solid #000;
   object-fit: cover;
 }
 
-.reviewers {
+.container {
   position: relative;
-  float: right;
-  text-align: right;
+  width: 100%;
+}
+
+.container .btnLeft {
+  outline: none;
+  position: absolute;
+  background: transparent;
+  top: 47%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  color: rgb(216, 238, 223);
+  border: none;
+  cursor: pointer;
+}
+
+.container .btnRight {
+  outline: none;
+  position: absolute;
+  background: transparent;
+  top: 47%;
+  right: -3%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  color: rgb(216, 238, 223);
+  border: none;
+  cursor: pointer;
+}
+
+.container .btnLeft:hover {
+  animation: place-order-keyframes 0.9s linear;
+  background: transparent;
+}
+
+.container .btnRight:hover {
+  animation: place-order-keyframes 0.9s linear;
+  background: transparent;
+}
+
+@keyframes place-order-keyframes {
+  0% {
+    box-shadow: 0 0 0 0 rgba(104, 196, 188, 0.8);
+  }
+  4%,
+      90% {
+    box-shadow: 0 0 25px 3px rgba(104, 196, 188, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(104, 196, 188, 0.8);
+  }
 }
 
