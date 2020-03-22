@@ -49,7 +49,9 @@ const Stars = ({starCount}) => {
           </span>
 
         default:
-          return <i className="fas fa-house-damage fa-xs hearts"/>
+          return <span className={styles.hearts}>
+            <i className="fas fa-house-damage fa-xs hearts"/>
+            </span>
       }
     })()}
     </span>

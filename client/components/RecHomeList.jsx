@@ -8,24 +8,29 @@ const RecHomeList = ({ homesSet, shift, nexthome, prevhome }) => {
 
     return (
         <div>
-            <h4>More Homes You May Like</h4>
 
-            <div className={styles.container}>
-
-                <button
+      {/* _______________________________________________*/}
+            <div className={styles.btnContainer}>
+                <button className={styles.btnLeft}
                     onClick={prevhome}
                     disabled={shift === 0}
-                >Back</button>
-      {/* _______________________________________________*/}
+                    >Back</button>
+
+            <div className={styles.container}>
+                    <h4>More Homes You May Like</h4>
+
+
                 <div className={styles.listWrapper} style={{
                         'transform': `translateX(-${shift*(272)}px)`}}>{homes}</div>
     {/* __________________________________________________*/}
 
-                    <button
+            </div>
+
+
+                    <button className={styles.btnRight}
                         onClick={nexthome}
                         disabled={shift === homesSet.length-3}
                     >Forward</button>
-
             </div>
 
         </div>
