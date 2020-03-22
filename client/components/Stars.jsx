@@ -2,7 +2,6 @@ import React from 'react';
 import styles from '../stylesheets/Stars.module.css';
 
 const Stars = ({starCount}) => {
-  console.log (styles);
 
   return (
     <span>

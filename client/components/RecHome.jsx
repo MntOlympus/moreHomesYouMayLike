@@ -1,27 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Stars from './Stars.jsx';
 import styles from '../stylesheets/RecHome.module.css';
 
-const RecHome = ({ home, image, imageForward, imageBackward }) => {
+const RecHome = ({ home }) => {
+
+  const [index, setIndex] = useState(0);
 
   return (
     <div className={styles.home}>
 
       <section>
+{/* ______________image carousel_________________________*/}
         <div>
-                <button
-                  onClick={imageBackward}
-                  disabled={image === 0}
-                >Back</button>
+          <button
+            onClick={() => setIndex(index - 1)}
+            disabled={index === 0}
+          >Back</button>
 
-        <img src={home.images[image]} className={styles.img}></img>
+        <img src={home.images[index]} className={styles.img}></img>
 
-               <button
-                  onClick={imageForward}
-                  disabled={image === home.images.length - 1}
-                >Forward</button>
-
+          <button
+            onClick={() => setIndex(index + 1)}
+              disabled={index === home.images.length - 1}
+          >Forward</button>
         </div>
+{/* ______________image carousel__________________________ */}
 
         <span>
         <p className={styles.reviewers}>
