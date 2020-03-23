@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-var dbName = 'seedTest';
+var dbName = 'recommendations';
 mongoose.connect(`mongodb://localhost/${dbName}`, {useNewUrlParser: true, useUnifiedTopology: true});
 var Schema = mongoose.Schema;
 

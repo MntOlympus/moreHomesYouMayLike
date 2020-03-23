@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-var dbName = 'seedTest'
+var dbName = 'recommendations'
 
 //-------------establish connection---------------------
 mongoose.connect(`mongodb://localhost/${dbName}`, {useNewUrlParser: true, useUnifiedTopology: true});
