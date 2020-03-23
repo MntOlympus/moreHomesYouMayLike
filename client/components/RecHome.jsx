@@ -29,16 +29,23 @@ const RecHome = ({ home }) => {
 {/* ______________image carousel__________________________ */}
 
         <span>
-        <p className={styles.reviewers}>
-          <Stars starCount={home.review.stars} />
-            {home.review.stars}
-            ({home.review.reviewers})
-        </p>
-        <p>{home.space.occupancy} {home.space.type} ☕️ {home.space.bedCount} beds</p>
-        </span>
+          <p className={styles.reviewers}>
+            <Stars starCount={home.review.stars} />
+              {home.review.stars}&nbsp;
+              ({home.review.reviewers})
+          </p>
 
-        <p>{home.description}</p>
-        <p>${home.rate.price} / {home.rate.timeframe}</p>
+          <p>{home.space.occupancy} {home.space.type} ⚛ {home.space.bedCount} beds</p>
+          <p>{home.description}</p>
+
+          <div className={styles.sideBySideRate}>
+            <p style={{fontWeight: 'bold'}}> ${home.rate.price} &nbsp;</p>
+          </div>
+          <div className={styles.sideBySideRate}>
+            <p>/&nbsp; {home.rate.timeframe}</p>
+          </div>
+
+        </span>
 
       </section>
 

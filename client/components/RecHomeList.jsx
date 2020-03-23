@@ -20,7 +20,7 @@ const RecHomeList = ({ homesSet, shift, nexthome, prevhome }) => {
                     <h4>More Homes You May Like</h4>
 
                 <div className={styles.listWrapper} style={{
-                        'transform': `translateX(-${shift*(272)}px)`}}>{homes}</div>
+                        'transform': `translateX(-${shift*(269)}px)`}}>{homes}</div>
             </div>
 
                 <button className={styles.btnRight}
