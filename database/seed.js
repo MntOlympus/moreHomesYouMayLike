@@ -31,9 +31,22 @@ handleError = function(err) {
 
 }
 
-var image1 = 'https://cdn1.artstation.com/p/assets/images/images/001/139/545/large/liam-reid-liam-reid-hackerroom.jpg?1440869455';
-var image2 = 'https://cdnb.artstation.com/p/assets/images/images/004/991/311/medium/adrian-marc-amarc-cyberoom-v3.jpg?1487708427';
-var image3 = 'https://cdna.artstation.com/p/assets/images/images/009/687/364/large/tony-setiabudi-jadi-final0000.jpg?1520345288';
+randomImage = function() {
+
+  var x = 6; //this is the number of images per home object that will be seeded (random)
+  let padToThree = number => number <= 999 ? `00${number}`.slice(-3) : number; //fancy es6 zero padding function
+
+  var imageRandom = Math.floor(Math.random() * 188); //this integer is the number of items in an AWS bucket
+  var url = 'https://olympuscomponent.s3-us-west-1.amazonaws.com/';
+  var image = url + padToThree(imageRandom) + '.jpg';
+
+  return image;
+}
+
+// test images
+// var image1 = 'https://cdn1.artstation.com/p/assets/images/images/001/139/545/large/liam-reid-liam-reid-hackerroom.jpg?1440869455';
+// var image2 = 'https://cdnb.artstation.com/p/assets/images/images/004/991/311/medium/adrian-marc-amarc-cyberoom-v3.jpg?1487708427';
+// var image3 = 'https://cdna.artstation.com/p/assets/images/images/009/687/364/large/tony-setiabudi-jadi-final0000.jpg?1520345288';
 
 populate = function() {
 
@@ -81,7 +94,7 @@ populate = function() {
         reviewers: faker.random.number($nbDigits = 2000, $strict = true)
       },
       description: faker.hacker.phrase(),
-      images: [image1, image2, image3]
+      images: [randomImage(), randomImage(), randomImage(), randomImage(), randomImage(), randomImage()]
     });
 
     casa.save(function (err) {
