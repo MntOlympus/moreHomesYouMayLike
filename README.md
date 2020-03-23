@@ -28,6 +28,10 @@ This application assumes a no-password access to mongoDB. Further configuation w
 
 Otherwise, refer to [Usage](#Usage)
 
+An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
+
+- Node 6.13.0
+
 ## Development
 You can run the server in development mode by running:
 -npm run start-dev (this uses nodemon)
