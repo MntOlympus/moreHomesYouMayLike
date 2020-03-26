@@ -54,4 +54,4 @@ const RecHome = ({ home }) => {
 
 };
 
-export default RecHome;
+export default React.memo(RecHome);
