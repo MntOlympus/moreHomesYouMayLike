@@ -35,4 +35,4 @@ const RecHomeList = ({ homesSet, shift, nexthome, prevhome }) => {
     )
 };
 
-export default RecHomeList;
+export default React.memo(RecHomeList);

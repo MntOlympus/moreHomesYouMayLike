@@ -5,7 +5,7 @@
   padding-right: 2em;
   font-size: 10px;
   line-height: 1.23;
-  -webkit-animation: fadein 1.5s; /* Safari, Chrome and Opera > 12.1 */
+  -webkit-animation: fadein 1.9s; /* Safari, Chrome and Opera > 12.1 */
 
 }
 
@@ -15,13 +15,13 @@
 }
 
 @keyframes fadein {
-  from { opacity: 0; }
+  from { opacity: 0.15; }
   to   { opacity: 1; }
 }
 
 /* Safari, Chrome and Opera > 12.1 */
 @-webkit-keyframes fadein {
-  from { opacity: 0; }
+  from { opacity: 0.15; }
   to   { opacity: 1; }
 }
 
