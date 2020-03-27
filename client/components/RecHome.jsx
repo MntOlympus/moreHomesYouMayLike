@@ -21,11 +21,11 @@ const RecHome = ({ home }) => {
 
             <TransitionGroup component={null}>
               <CSSTransition
-                classNames="fade"
-                timeout={1500}
-                appear={false}
-                in={false}
-                key={home.images[index]}>
+                  classNames="fade"
+                  timeout={1500}
+                  appear={false}
+                  in={false}
+                  key={home.images[index]}>
                   <img src={home.images[index]} className={styles.img}/>
               </CSSTransition>
             </TransitionGroup>
