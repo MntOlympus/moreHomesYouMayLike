@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Stars from './Stars.jsx';
 import styles from '../stylesheets/RecHome.module.css';
 
@@ -18,9 +19,18 @@ const RecHome = ({ home }) => {
             <i className="fas fa-2x fa-chevron-left"></i>
             </button>
 
-        <img src={home.images[index]} className={styles.img}></img>
+            <TransitionGroup component={null}>
+              <CSSTransition
+                classNames="fade"
+                timeout={1500}
+                appear={false}
+                in={false}
+                key={home.images[index]}>
+                  <img src={home.images[index]} className={styles.img}/>
+              </CSSTransition>
+            </TransitionGroup>
 
-          <button className={styles.btnRight}
+            <button className={styles.btnRight}
             onClick={() => setIndex(index + 1)}
               disabled={index === home.images.length - 1}>
               <i className="fas fa-2x fa-chevron-right"></i>
