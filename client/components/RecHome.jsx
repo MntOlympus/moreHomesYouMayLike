@@ -21,7 +21,7 @@ const RecHome = ({ home }) => {
 
             <TransitionGroup component={null}>
               <CSSTransition
-                  classNames='carousel'
+                  classNames='zeta'
                   timeout={1500}
                   appear={false}
                   in={false}

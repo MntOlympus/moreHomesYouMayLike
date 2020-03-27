@@ -6,7 +6,6 @@
   font-size: 10px;
   line-height: 1.23;
   -webkit-animation: fadein 1.9s; /* Safari, Chrome and Opera > 12.1 */
-
 }
 
 .sideBySideRate {
@@ -43,37 +42,40 @@
 
 ------------------------------- */
 
-/* .carouselAppear {
+:global(.appear) {
   opacity: 0;
 }
 
-.carouselAppear .carouselAppearActive {
+:global(.zeta-appear.zeta-appear-active) {
 opacity: 1;
 transition: opacity 1000ms;
 }
 
-.carouselEnter {
+:global(.zeta-enter) {
   opacity: 0;
   z-index: auto;
 }
-.carouselEnter .carouselEnterActive {
+
+:global(.zeta-enter.zeta-enter-active) {
   opacity: 1;
   transition: opacity 5000ms;
 }
-.carouselExit {
+
+:global(.zeta-exit) {
   opacity: 1;
   position: absolute;
 }
-.carouselExit .carouselExitActive {
+:global(.zeta-exit.zeta-exit-active) {
   opacity: 0;
   transition: opacity 5000ms;
   position: absolute;
   margin-left: 20px;
 }
-.carousel .exitDone {
+:global(.zeta-exit-done) {
  opacity: 0;
  position: absolute;
-} */
+}
+
 
 /* -------------------------------
     for buttons over images
@@ -115,6 +117,12 @@ transition: opacity 1000ms;
   border: none;
   cursor: pointer;
 }
+
+
+/* -------------------------------
+    uncomment below for image
+    carousel button highlights
+------------------------------- */
 
 /* .container .btnLeft:hover {
   animation: place-order-keyframes 0.9s linear;
