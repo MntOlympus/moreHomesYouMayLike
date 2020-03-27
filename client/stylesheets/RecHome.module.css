@@ -32,28 +32,48 @@
 }
 
 
+
+
 /* -------------------------------
     image transitions
+
+    (could not find correct way to modularize CSS with CSSTransition groups...below is best attempt according to similar conversion rules)
+
+    rules will reside in public folder style sheet
+
 ------------------------------- */
 
-.carousel-enter {
-  opacity: 0.01;
+/* .carouselAppear {
+  opacity: 0;
 }
 
-.carousel-enter-active {
+.carouselAppear .carouselAppearActive {
+opacity: 1;
+transition: opacity 1000ms;
+}
+
+.carouselEnter {
+  opacity: 0;
+  z-index: auto;
+}
+.carouselEnter .carouselEnterActive {
   opacity: 1;
-  transition: opacity 500ms ease-in;
+  transition: opacity 5000ms;
 }
-
-.carousel-exit {
+.carouselExit {
   opacity: 1;
+  position: absolute;
 }
-
-.carousel-exit-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
+.carouselExit .carouselExitActive {
+  opacity: 0;
+  transition: opacity 5000ms;
+  position: absolute;
+  margin-left: 20px;
 }
-
+.carousel .exitDone {
+ opacity: 0;
+ position: absolute;
+} */
 
 /* -------------------------------
     for buttons over images

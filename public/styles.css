@@ -19,38 +19,35 @@ html {
 }
 
 
-/* appear - on page load */
-.fade-appear {
+.carousel-appear {
   opacity: 0;
 }
 
-.fade-appear.fade-appear-active {
+.carousel-appear.carousel-appear-active {
 opacity: 1;
 transition: opacity 1000ms;
 }
 
-/* enter */
-.fade-enter {
+.carousel-enter {
   opacity: 0;
   z-index: auto;
 }
-.fade-enter.fade-enter-active {
+.carousel-enter.carousel-enter-active {
   opacity: 1;
   transition: opacity 5000ms;
 }
 
-/* exit */
-.fade-exit {
+.carousel-exit {
   opacity: 1;
   position: absolute;
 }
-.fade-exit.fade-exit-active {
+.carousel-exit.carousel-exit-active {
   opacity: 0;
   transition: opacity 5000ms;
   position: absolute;
   margin-left: 20px;
 }
-.fade-exit-done {
+.carousel-exit-done {
  opacity: 0;
  position: absolute;
 }
