@@ -107,11 +107,10 @@ populate = function() {
   //gives time to throw error and stop process
   setTimeout(() => {
     console.log('database seeded.');
+    process.exit();
   }, 2000);
 
 };
 
 populate();
-
-
 
